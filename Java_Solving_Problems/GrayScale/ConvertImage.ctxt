@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=ConvertImage
+comment1.params=startingImage
+comment1.target=edu.duke.ImageResource\ makeGrayScaleImage(edu.duke.ImageResource)
+comment2.params=
+comment2.target=void\ testMakeGrayScaleImage()
+comment3.params=startingImage\ grayImage
+comment3.target=void\ saveGrayScaleImage(edu.duke.ImageResource,\ edu.duke.ImageResource)
+numComments=4

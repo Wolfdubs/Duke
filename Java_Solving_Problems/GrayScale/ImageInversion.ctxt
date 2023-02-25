@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=ImageInversion
+comment1.params=startingImage
+comment1.target=edu.duke.ImageResource\ makeInversion(edu.duke.ImageResource)
+comment2.params=
+comment2.target=void\ testMakeInversion()
+comment3.params=startingImage\ invertedImage
+comment3.target=void\ saveInvertedImage(edu.duke.ImageResource,\ edu.duke.ImageResource)
+numComments=4

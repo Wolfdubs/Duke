@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Arrays
+comment1.params=rolls
+comment1.target=void\ printDiceRolls(int)
+comment2.params=input
+comment2.target=int[]\ charOccurrenceInString(java.lang.String)
+numComments=3
