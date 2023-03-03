@@ -12,10 +12,11 @@ import edu.duke.*;
 public class CodonCount {
     
     private Map<String, Integer> mapCodons;
-
+    private Set<String> uniqueCodons;
     
     public CodonCount(){
         mapCodons = new HashMap<>();
+        uniqueCodons = new HashSet<>();
     }
     
     private void buildCodonMap(int start, String dna){
@@ -51,29 +52,41 @@ public class CodonCount {
         }
     }
     
+    private void makeSetOfUniqueCodons(){
+        uniqueCodons.clear();
+        for (String codon : mapCodons.keySet()){
+            uniqueCodons.add(codon);
+        }
+    }
+    
     public void tester(){
         FileResource fr = new FileResource();
         String contents = fr.asString().toUpperCase().trim();
-        int start = 1, end = 5;
+        int start = 7, end = 7;
         
         buildCodonMap(0,contents);
         System.out.println("Reading frame starting from index 0 contains " + mapCodons.size() + " codons");
         System.out.println("Most common codon = " + getMostCommonCodon() + ", which occurs " + mapCodons.get(getMostCommonCodon()) + " times");
         System.out.println("Codons occurring between " + start + " and " + end + " times: "); 
         printCodonCounts(start,end);
+        makeSetOfUniqueCodons();
+        System.out.println("unique codons from index 0 = " +  uniqueCodons.size());
         
         buildCodonMap(1,contents);
         System.out.println("Reading frame starting from index 1 contains " + mapCodons.size() + " codons");
         System.out.println("Most common codon = " + getMostCommonCodon() + ", which occurs " + mapCodons.get(getMostCommonCodon()) + " times");
         System.out.println("Codons occurring between " + start + " and " + end + " times: "); 
         printCodonCounts(start,end);
+        makeSetOfUniqueCodons();
+        System.out.println("unique codons from index 1 = " +  uniqueCodons.size());
         
         buildCodonMap(2,contents);
         System.out.println("Reading frame starting from index 2 contains " + mapCodons.size() + " codons");
         System.out.println("Most common codon = " + getMostCommonCodon() + ", which occurs " + mapCodons.get(getMostCommonCodon()) + " times");
         System.out.println("Codons occurring between " + start + " and " + end + " times: "); 
         printCodonCounts(start,end);
-
+        makeSetOfUniqueCodons();
+        System.out.println("unique codons from index 2 = " +  uniqueCodons.size());
         
         
         

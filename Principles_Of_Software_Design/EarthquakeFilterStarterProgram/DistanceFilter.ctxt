@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=DistanceFilter
+comment0.text=\r\n\ Write\ a\ description\ of\ DistanceFilter\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=location\ maxDistance
+comment1.target=DistanceFilter(Location,\ int)
+comment2.params=location\ maxDistance\ name
+comment2.target=DistanceFilter(Location,\ int,\ java.lang.String)
+comment3.params=qe
+comment3.target=boolean\ satisfies(QuakeEntry)
+comment4.params=
+comment4.target=java.lang.String\ getName()
+numComments=5
