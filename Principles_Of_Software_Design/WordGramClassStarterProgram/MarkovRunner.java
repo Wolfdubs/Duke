@@ -32,8 +32,8 @@ public class MarkovRunner {
         FileResource fr = new FileResource("data/confucius.txt"); 
         String st = fr.asString(); 
         st = st.replace('\n', ' '); 
-        MarkovWord mw = new MarkovWord(3);
-        runModel(mw, st, 120, 643);
+        MarkovWord mw = new MarkovWord(5);
+        runModel(mw, st, 120, 844);
     } 
 
     private void printOut(String s){
@@ -69,5 +69,68 @@ public class MarkovRunner {
         mw2.setTraining(string);
     
     }
+    
+    
+    public void testHashMap(){
+        FileResource fr = new FileResource("data/confucius.txt"); 
+        String st = fr.asString(); 
+        st = st.replace('\n', ' '); 
+        EfficientMarkovWord emw = new EfficientMarkovWord(2);
+        runModel(emw, st, 50, 65);
+    }
+    
+    public void testHashMap2(){
+        String st = "this is a test yes this is really a test yes a test this is wow";
+        EfficientMarkovWord emw = new EfficientMarkovWord(2);
+        runModel(emw, st, 50, 42);
+    }
+    
+    public void compareMethods(){
+        
+        FileResource fr = new FileResource("data/hawthorne.txt");
+        String st = fr.asString();
+        st.replace("\n"," ");
+        double preMW = System.nanoTime();
+        MarkovWord mw = new MarkovWord(2);
+        runModel(mw, st, 100, 42);
+        double postMW = System.nanoTime();
+        System.out.println("Markov Word took this many seconds: " + (postMW - preMW)/1000000000);
+        
+        double preEMW = System.nanoTime();
+        EfficientMarkovWord emw = new EfficientMarkovWord(2);
+        runModel(emw, st, 100, 42);
+        long postEMW = System.nanoTime();
+        System.out.println("Markov Word took this many seconds: " + (postEMW - preEMW)/1000000000);
+    }
+    
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

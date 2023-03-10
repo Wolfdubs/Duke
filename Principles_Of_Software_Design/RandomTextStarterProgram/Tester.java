@@ -23,13 +23,13 @@ public class Tester {
     }
     
     public void testGetFollowsWithFile(){
-        FileResource fr = new FileResource();
+        FileResource fr = new FileResource("data/confucius.txt");
         String st = fr.asString();
         st = st.replace('\n', ' ');
         MarkovOne mo = new MarkovOne();
         //markov.setRandom(42);
         mo.setTraining(st);
-        ArrayList<String> followingChars = mo.getFollows("o");
+        ArrayList<String> followingChars = mo.getFollows("he");
         System.out.println(followingChars.size());        
     }
     

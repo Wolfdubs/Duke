@@ -75,7 +75,7 @@ public class EMM extends AbstractMarkovModel{
 //          System.out.printf("Key:\t[%s]\tvalues: ", key);
 //          System.out.println(myMap.get(key));
         }
-        System.out.println("The maximum number of keys following a key is " + maxSize);
+        System.out.println("The maximum number of strings following a key is " + maxSize);
         ArrayList<String> keys = new ArrayList<String>();
         for (String key : map.keySet()) {
             if(map.get(key).size() == maxSize){

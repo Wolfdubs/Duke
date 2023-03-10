@@ -28,7 +28,7 @@ public class MarkovWord implements IMarkovModel{
     private int indexOf(String[] words, WordGram target, int start) {
 	for(int i=start; i < words.length - myOrder; i++) {
             WordGram wg = new WordGram(words,i,myOrder);
-            if(wg.equals(target)) 
+            if (wg.equals(target)) 
                 return i;
 	}
 	return -1;

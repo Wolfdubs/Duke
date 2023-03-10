@@ -84,12 +84,23 @@ public class MarkovRunnerWithInterface {
         System.out.println("The running time of EfficientMarkovModel is " + (endTime-startTime)/ 1000000000.0 + " seconds");
     }
     
-    public void Quiz3(){
+    public void quiz3(){
         FileResource fr = new FileResource("data/romeo.txt");
 	String st = fr.asString();
 	st = st.replace('\n', ' ');
 	int seed = 615;
 	int size = 1000;
+        EMM emm = new EMM(5);
+        runModel(emm,st,size,seed);
+        emm.printHashMapInfo();
+    }
+    
+    public void exam9_10(){
+        FileResource fr = new FileResource("data/confucius.txt");
+	String st = fr.asString();
+	st = st.replace('\n', ' ');
+	int seed = 531;
+	int size = 200;
         EMM emm = new EMM(5);
         runModel(emm,st,size,seed);
         emm.printHashMapInfo();
